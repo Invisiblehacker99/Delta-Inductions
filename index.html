@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ricochet Rumble</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    hello
+    <div class="game-header">
+        <div id="turn-indicator">Turn: <span id="current-turn" class="blue-turn">Blue</span></div>
+        <div id="timer">Time left: <span id="time-left">60</span> seconds</div>
+    </div>
+    <div class="game-container">
+        <div class="controls-left">
+            <button id="undo">Undo</button>
+            <button id="redo">Redo</button>
+        </div>
+        <div id="board" class="board"></div>
+        <div class="controls">
+            <button id="pause">Pause</button>
+            <button id="resume">Resume</button>
+            <button id="reset">Reset</button>
+            <div id="rotation-controls" class="rotation-controls">
+                <button id="rotate-left">Rotate Left</button>
+                <button id="rotate-right">Rotate Right</button>
+            </div>
+        </div>
+    </div>
+    <script src="script3.js"></script>
+    <audio id="move" src="move.mp3"></audio>
+    <audio id="canon-fire" src="canon-fire.mp3"></audio>
+    <audio id="rotation" src="rotation.mp3"></audio>
+    <audio id="win" src="win.mp3"></audio>
+
 </body>
 </html>

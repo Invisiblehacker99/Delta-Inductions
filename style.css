@@ -1,0 +1,244 @@
+body {
+    background-color:#FFEEA9;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+}
+.game-header {
+    font-size: 20px;
+    background-color:#FEFFD2;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+#turn-indicator {
+    margin: 10px;
+    font-size: 1.2em;
+    
+}
+.blue-turn {
+    color: blue;
+}
+
+.red-turn {
+    color: red;
+}
+.game-container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 70vw;
+    height: auto;
+    margin-bottom: -4rem;
+    margin-top: -1rem;
+    position: relative; 
+}
+.controls-left {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    
+}
+
+.controls-left button {
+    border-radius: 7px;
+    margin-top: 20px;
+    background-color:rgb(209, 237, 241);
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-right: 10px; 
+    font-size: 16px; 
+    padding: 10px 10px; 
+    width: 100px; 
+    
+}
+.controls-left button:hover{
+    background-color: rgba(32, 247, 57, 0.9);
+}
+
+
+.controls-left button:last-child {
+    margin-right: 0;
+}
+
+.board {
+    background-color:#b4ddc1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    height: 80%;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    position: relative;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.cell {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+   
+  }
+  
+
+.piece {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    
+}
+.piece:hover{
+    box-shadow: 10px 10px 10px 10px rgba(206, 24, 239, 0.2);
+}
+
+.bullet {
+    width: 1.5vw;
+    height: 1.5vw;
+    max-width: 20px;
+    max-height: 20px;
+    background-color: rgb(223, 10, 247);
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+}
+.controls {
+    
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    padding: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.controls button {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em; 
+    padding: 10px 20px; 
+    margin-right: 5px ; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.controls button:hover {
+    background-color: rgba(241, 241, 11, 0.9);
+}
+
+
+#timer {
+    margin: 10px;
+}
+
+#rotation-controls {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+
+.titan.red-team {
+    background-color: rgb(237, 26, 26);
+}
+
+.titan.blue-team {
+    background-color: darkblue;
+}
+
+.tank.red-team {
+    background-color: rgb(233, 183, 33);
+}
+
+.tank.blue-team {
+    background-color: rgb(2, 58, 16);
+}
+
+.cannon.red-team {
+    background-color: gray;
+}
+
+.cannon.blue-team {
+    background-color: darkgray;
+}
+
+.ricochet.red-team {
+    background-color: red;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.ricochet.blue-team {
+    background-color: rgb(69, 134, 245);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.semi-ricochet.red-team {
+    background-color: red;
+    clip-path: polygon(0 90%, 10% 100%, 100% 10%, 90% 0%);
+}
+
+.semi-ricochet.blue-team {
+    background-color:rgb(69, 134, 245);
+    clip-path: polygon(0 90%, 10% 100%, 100% 10%, 90% 0%);
+}
+
+.possible-move {
+    background-color: #19ac19;
+}
+@media (min-width: 778px) {
+    .game-container {
+        flex-direction: row;
+        margin-top: -3rem;
+    }
+
+    .controls {
+        margin-top: 120px;
+        flex-direction: column;
+        position: static;
+        margin-left: 5%;
+        background-color: #ffd1b3; 
+        
+    }
+    .controls button{
+        margin-bottom: 10px;
+    }
+    .controls-left {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    
+}
+@media (max-width: 778px) {
+    .game-container {
+        flex-direction: column;
+    }
+
+    .controls {
+        position: static;
+        margin-top: 60px;
+        background-color: #ffd1b3;
+        
+    }
+}
